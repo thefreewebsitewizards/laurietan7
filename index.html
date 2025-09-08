@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laurie Tan - Creative Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3F51B5',
+                        secondary: '#F0F4F8',
+                        accent: '#388E3C',
+                        charcoal: '#2E2E2E',
+                        cream: '#EDE7F6',
+                        sage: '#BDBDBD',
+                        warm: '#FFEB3B',
+                        soft: '#F0F4F8',
+                        pop: '#D81B60',
+                        slate: '#F0F4F8',
+                        lavender: '#EDE7F6'
+                    },
+                    fontFamily: {
+                        sans: ['Lato', 'Open Sans', 'system-ui', 'sans-serif'],
+                        serif: ['Montserrat', 'Playfair Display', 'Georgia', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Lato:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        body {
+            background-color: #F0F4F8;
+            color: #2E2E2E;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #EDE7F6 0%, #F0F4F8 100%);
+        }
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+            font-weight: 400;
+            letter-spacing: 0.025em;
+            color: white;
+        }
+        .nav-link:hover {
+            color: #FFEB3B;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -4px;
+            left: 0;
+            background: #FFEB3B;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: #3F51B5;
+        }
+        .elegant-nav {
+            background: #3F51B5;
+            backdrop-filter: blur(15px);
+            border-bottom: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .elegant-nav.scrolled {
+            background: #3F51B5;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+        }
+        .card-hover {
+            transition: all 0.4s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        }
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        .serif {
+            font-family: 'Montserrat', 'Playfair Display', Georgia, serif;
+        }
+        .minimal-btn {
+            border: 1px solid #3F51B5;
+            color: #3F51B5;
+            transition: all 0.3s ease;
+        }
+        .minimal-btn:hover {
+            background: #3F51B5;
+            color: white;
+        }
+        .pop-btn {
+            background: #D81B60;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        .pop-btn:hover {
+            background: #C2185B;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(216, 27, 96, 0.3);
+        }
+        .highlight-hover:hover {
+            color: #FFEB3B;
+            transition: color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-slate font-sans">
+    <!-- Navigation -->
+    <nav class="elegant-nav fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col py-4">
+                <!-- Desktop: Logo centered, Mobile: Logo left, hamburger right -->
+                <div class="flex items-center justify-between md:justify-center md:flex-col">
+                    <!-- Logo Section -->
+                    <div class="text-left md:text-center">
+                        <div class="text-2xl font-light text-blue-100 serif tracking-wide">LAUREN TANNER</div>
+                        <div class="text-sm text-blue-100 opacity-90 tracking-widest hidden md:block">WRITER | ACTOR | DIRECTOR</div>
+                    </div>
+                    <!-- Mobile Menu Button -->
+                    <div class="md:hidden">
+                        <button class="outline-none mobile-menu-button text-blue-100" data-mobile-menu-button>
+                            <i data-feather="menu"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- Tagline for mobile -->
+                <div class="md:hidden text-left mt-2">
+                    <div class="text-sm text-blue-100 opacity-90 tracking-widest">WRITER | ACTOR | DIRECTOR</div>
+                </div>
+                <!-- Navigation Menu -->
+                <div class="hidden md:flex justify-center items-center space-x-8 mt-4">
+                    <a href="#home" class="nav-link font-medium">HOME</a>
+                    <a href="#about" class="nav-link font-medium">ABOUT</a>
+                    <a href="#services" class="nav-link font-medium">SERVICES</a>
+                    <a href="#writer" class="nav-link font-medium">WRITING</a>
+                    <a href="#actor" class="nav-link font-medium">ACTING</a>
+                    <a href="#director" class="nav-link font-medium">DIRECTING</a>
+                    <a href="#projects" class="nav-link font-medium">PROJECTS</a>
+                    <a href="#contact" class="nav-link font-medium">CONTACT</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden md:hidden bg-blue-50 shadow-lg border-t border-soft" data-mobile-menu>
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#home" class="block px-3 py-2 text-base font-medium text-blue-800 hover:text-blue-600 transition-colors">HOME</a>
+            <a href="#about" class="block px-3 py-2 text-base font-medium text-blue-800 hover:text-blue-600 transition-colors">ABOUT</a>
+            <a href="#services" class="block px-3 py-2 text-base font-medium text-blue-800 hover:text-blue-600 transition-colors">SERVICES</a>
+            <a href="#writer" class="block px-3 py-2 text-base font-medium text-blue-800 hover:text-blue-600 transition-colors">WRITING</a>
+            <a href="#actor" class="block px-3 py-2 text-base font-medium text-blue-800 hover:text-blue-600 transition-colors">ACTING</a>
+            <a href="#director" class="block px-3 py-2 text-base font-medium text-blue-800 hover:text-blue-600 transition-colors">DIRECTING</a>
+            <a href="#projects" class="block px-3 py-2 text-base font-medium text-blue-800 hover:text-blue-600 transition-colors">PROJECTS</a>
+            <a href="#contact" class="block px-3 py-2 text-base font-medium text-blue-800 hover:text-blue-600 transition-colors">CONTACT</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-bg text-blue-800 pt-40 pb-32">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <div class="text-center lg:text-left mb-16 lg:mb-0">
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-light serif mb-6 tracking-tight text-charcoal">Laurie Tan</h1>
+                    <p class="text-xl md:text-2xl text-primary mb-8 font-light">Writer • Actor • Director</p>
+                    <p class="text-lg text-charcoal mb-12 max-w-lg leading-relaxed">A multi-faceted creative professional bringing stories to life through the art of storytelling, performance, and direction.</p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6">
+                        <a href="#about" class="minimal-btn px-8 py-3 text-center font-medium transition-all duration-300">Explore Work</a>
+                        <a href="#contact" class="pop-btn px-8 py-3 text-center font-medium transition-all duration-300">Get In Touch</a>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 flex justify-center lg:justify-end" data-aos="fade-up">
+                        <div class="w-80 h-80 md:w-96 md:h-96 overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500">
+                        <img src="/New folder/hero.jpg" alt="Laurie Tan" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-32 bg-lavender">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-5xl font-light serif text-charcoal mb-6" data-aos="fade-up">About</h2>
+                <div class="section-divider mx-auto mb-8"></div>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                    A multi-faceted creative professional with experience in writing, acting, and directing. 
+                    Passionate about storytelling and bringing diverse voices to the stage and screen.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-16">
+                <div class="text-center card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-blue-200 bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="edit-3" class="text-blue-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-medium serif text-charcoal mb-4">Writer</h3>
+                    <p class="text-charcoal mb-8 leading-relaxed">Creating compelling narratives that resonate with audiences and explore the human experience.</p>
+                    <a href="#writer" class="text-pop hover:text-primary transition-colors font-medium underline decoration-1 underline-offset-4">View Writing</a>
+                </div>
+                <div class="text-center card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="users" class="text-blue-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-medium serif text-charcoal mb-4">Actor</h3>
+                    <p class="text-charcoal mb-8 leading-relaxed">Bringing characters to life with depth and authenticity on stage and screen.</p>
+                    <a href="#actor" class="text-pop hover:text-primary transition-colors font-medium underline decoration-1 underline-offset-4">View Acting</a>
+                </div>
+                <div class="text-center card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 bg-accent bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i data-feather="video" class="text-blue-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-2xl font-medium serif text-charcoal mb-4">Director</h3>
+                    <p class="text-charcoal mb-8 leading-relaxed">Shaping creative visions and guiding productions from concept to completion.</p>
+                    <a href="#director" class="text-pop hover:text-primary transition-colors font-medium underline decoration-1 underline-offset-4">View Directing</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <!-- Services Section -->
+     <section id="services" class="py-32 bg-slate">
+         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="text-center mb-20">
+                 <h2 class="text-4xl md:text-5xl font-light serif text-charcoal mb-6" data-aos="fade-up">Services</h2>
+                 <div class="section-divider mx-auto mb-8"></div>
+                 <p class="text-xl text-charcoal max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                     Professional creative services tailored to bring your vision to life.
+                 </p>
+             </div>
+             <div class="grid md:grid-cols-3 gap-12">
+                 <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                     <div class="w-16 h-16 bg-blue-200/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                         <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                         </svg>
+                     </div>
+                     <h3 class="text-xl font-medium text-charcoal mb-4">Script Writing</h3>
+                     <p class="text-charcoal leading-relaxed mb-6">Original screenplays, stage plays, and adaptations crafted with compelling characters and authentic dialogue.</p>
+                     <a href="#contact" class="text-pop hover:text-primary transition-colors font-medium underline decoration-1 underline-offset-2">Learn More</a>
+                 </div>
+                 <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                     <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                         <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4V2a1 1 0 011-1h8a1 1 0 011 1v2m-9 0h10m-10 0a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2m-5 4v6m-3-3h6"></path>
+                         </svg>
+                     </div>
+                     <h3 class="text-xl font-medium text-charcoal mb-4">Performance</h3>
+                     <p class="text-charcoal leading-relaxed mb-6">Professional acting services for theatre, film, and digital media with depth and authenticity.</p>
+                     <a href="#contact" class="text-pop hover:text-primary transition-colors font-medium underline decoration-1 underline-offset-2">Learn More</a>
+                 </div>
+                 <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                     <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                         <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                         </svg>
+                     </div>
+                     <h3 class="text-xl font-medium text-charcoal mb-4">Direction</h3>
+                     <p class="text-charcoal leading-relaxed mb-6">Creative direction for film, theatre, and digital productions from concept to completion.</p>
+                     <a href="#contact" class="text-pop hover:text-primary transition-colors font-medium underline decoration-1 underline-offset-2">Learn More</a>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <!-- Writer Section -->
+    <section id="writer" class="py-32 bg-lavender">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-light serif text-charcoal mb-6" data-aos="fade-up">Writing</h2>
+                <div class="section-divider mx-auto mb-8"></div>
+                <p class="text-xl text-charcoal max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                    Crafting compelling narratives that explore the human experience through diverse perspectives.
+                </p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-20 items-center">
+                <div data-aos="fade-right">
+                    <div class="overflow-hidden shadow-lg">
+                        <img src="/New folder/IMG_0902.JPG" alt="Laurie Writing" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+                <div data-aos="fade-left">
+                    <div class="space-y-6 text-charcoal leading-relaxed">
+                        <p>Laurie's plays have been read or produced locally at Broward College, Femuscripts, Thinking Cap Theatre, NCPLab, Naked Angels, Cutler Bay Community Theatre, Nova Theatre (Ann Arbor, Michigan), PlayZoomers, and at the Voices of Women Theatre Festival in Tampa, New City Players in Ft. Lauderdale, and at Miami One-Acts.</p>
+                        
+                        <div class="mt-12">
+                            <h4 class="text-xl font-medium serif text-charcoal mb-6">Publications</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>New Father, a monologue, Smith and Kraus</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-2 h-2 bg-blue-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Sex Ed for Mom, Solis Press</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <a href="https://newplayexchange.org/users/42475/laurie-tan" class="text-pop hover:text-primary transition-colors underline decoration-1 underline-offset-2">NewPlayExchange profile</a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <p class="mt-8">Laurie recently directed and adapted the screenplay of the short film, Stubborn Grace, currently on the film festival circuit, co-produced by Project Soar and Andronache Studios.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Actor Section -->
+     <section id="actor" class="py-32 bg-slate">
+         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="text-center mb-20">
+                 <h2 class="text-4xl md:text-5xl font-light serif text-charcoal mb-6" data-aos="fade-up">Acting</h2>
+                 <div class="section-divider mx-auto mb-8"></div>
+                 <p class="text-xl text-charcoal max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                     Bringing characters to life with depth and authenticity on stage and screen.
+                 </p>
+             </div>
+             <div class="grid lg:grid-cols-2 gap-20 items-center">
+                 <div data-aos="fade-right">
+                     <div class="overflow-hidden shadow-lg">
+                         <img src="/New folder/IMG_0903.JPG" alt="Laurie Acting" class="w-full h-auto object-cover">
+                     </div>
+                 </div>
+                 <div data-aos="fade-left">
+                     <div class="space-y-6 text-charcoal leading-relaxed">
+                         <p>Most recently Laurie was seen as Momo in The Humans at Palm Beach Dramaworks, Violet Jenkins in Second Chance by Mike Vogel, and Claribel Cone in The Equivalent of Sensation by Arianna Rose.</p>
+                         
+                         <p>She is a regular actor on the YouTube series, Soul Snack. Co-founder of Femuscripts Productions, Laurie played roles, directed and wrote plays for their Long Story Shorts, Love Fest, LoveFest2, Lovely Light Readings, and Florida: Her Stories play festivals.</p>
+                         
+                         <p>Laurie starred in the award-winning Stubborn Grace. Other recent credits include Mistress Overdone/the Prioress in Palm Beach Shakespeare's Measure for Measure.</p>
+                         
+                         <p>Currently, Laurie is preparing for her debut in stand-up, and will be featured at various locations in South Florida.</p>
+                         
+                         <div class="mt-8">
+                             <a href="#contact" class="text-pop hover:text-primary transition-colors font-medium underline decoration-1 underline-offset-2">View Acting Reel</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <!-- Director Section -->
+     <section id="director" class="py-32 bg-lavender">
+         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="text-center mb-20">
+                 <h2 class="text-4xl md:text-5xl font-light serif text-charcoal mb-6" data-aos="fade-up">Directing</h2>
+                 <div class="section-divider mx-auto mb-8"></div>
+                 <p class="text-xl text-charcoal max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                     Shaping creative visions and guiding productions from concept to completion.
+                 </p>
+             </div>
+             <div class="grid lg:grid-cols-2 gap-20 items-center">
+                 <div data-aos="fade-right">
+                     <div class="overflow-hidden shadow-lg">
+                         <video controls autoplay muted loop class="w-full h-auto object-cover">
+                             <source src="/New folder/Miami Motel stories North Miami Promo 2-23-20 edit2.mp4" type="video/mp4">
+                             Your browser does not support the video tag.
+                         </video>
+                     </div>
+                 </div>
+                 <div data-aos="fade-left">
+                     <div class="space-y-6 text-charcoal leading-relaxed">
+                         <p>Laurie turned to directing when she co-founded Femuscripts, a theatre company dedicated to producing works by women. She directed two films in 2024, Stubborn Grace, an award-winning short film made in collaboration with Project Soar and Andronache Studios, and Trippin' in Town Hall, a film made for the 48-Hour Film Project, Miami-Ft. Lauderdale version.</p>
+                         
+                         <p>Her latest short film, Athena's Wisdom, will be released shortly. On stage, she directed a staged reading of the works written during her playwriting workshop for Femuscripts Productions, The Love Space Demands.</p>
+                         
+                         <p>Laurie has twice directed for Miami One-Acts, a popular bi-annual short play festival in Miami. She directed The Kenmore Hotel in 2024, several plays between 2020 and 2023, including Dark Matter by Donald Loftus and her own play Sex Ed for Mom with Play Zoomers.</p>
+                         
+                         <p>In 2020, she founded Femuscripts Productions, which produced several online play festivals, and debuted with a live festival in May 2022, LoveFest 2. Laurie directed six of thirteen plays in LoveFest 2.</p>
+                         
+                         <div class="mt-8">
+                             <a href="#contact" class="text-pop hover:text-primary transition-colors font-medium underline decoration-1 underline-offset-2">View Director Reel</a>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+
+     <!-- Projects Section -->
+     <section id="projects" class="py-24 bg-lavender">
+         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="text-center mb-20">
+                 <h2 class="text-3xl md:text-4xl font-light text-charcoal mb-6" data-aos="fade-up">Upcoming Projects</h2>
+                 <div class="section-divider mx-auto mb-8"></div>
+                 <p class="text-lg text-charcoal max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                     Exciting new projects and creative endeavors on the horizon.
+                 </p>
+             </div>
+             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+                 <div class="group" data-aos="fade-up" data-aos-delay="200">
+                     <div class="mb-6 overflow-hidden">
+                         <img src="/New folder/IMG_0911.JPG" alt="Stubborn Grace" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
+                     </div>
+                     <h3 class="text-xl font-medium text-charcoal mb-3">Athena's Wisdom</h3>
+                     <p class="text-charcoal mb-2 font-medium">2025 - Upcoming Short Film</p>
+                     <p class="text-charcoal mb-4 leading-relaxed">Latest short film currently in post-production, set for release shortly. Directed and adapted screenplay.</p>
+                     <a href="#" class="text-pop hover:text-primary transition-colors font-medium">Coming Soon →</a>
+                 </div>
+                 <div class="group" data-aos="fade-up" data-aos-delay="300">
+                     <div class="mb-6 overflow-hidden">
+                         <img src="/New folder/IMG_0916.JPG" alt="The Humans" class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
+                     </div>
+                     <h3 class="text-xl font-medium text-charcoal mb-3">Stand-Up Comedy Debut</h3>
+                     <p class="text-charcoal mb-2 font-medium">2025 - Live Performances</p>
+                     <p class="text-charcoal mb-4 leading-relaxed">Preparing for stand-up comedy debut at various locations throughout South Florida.</p>
+                     <a href="#" class="text-pop hover:text-primary transition-colors font-medium">Coming Soon →</a>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <!-- Contact Section -->
+     <section id="contact" class="py-32 bg-slate">
+         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="text-center mb-20">
+                 <h2 class="text-4xl md:text-5xl font-light serif text-charcoal mb-6" data-aos="fade-up">Get In Touch</h2>
+                 <div class="section-divider mx-auto mb-8"></div>
+                 <p class="text-xl text-charcoal max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                     Ready to collaborate? Let's create something extraordinary together.
+                 </p>
+             </div>
+             <div class="max-w-2xl mx-auto">
+                 <div class="grid md:grid-cols-2 gap-12">
+                     <div class="text-center card-hover" data-aos="fade-up" data-aos-delay="200">
+                         <div class="w-16 h-16 bg-blue-200/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                             <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                             </svg>
+                         </div>
+                         <h3 class="text-xl font-medium text-charcoal mb-3">Email</h3>
+                         <p class="text-charcoal mb-4">laurie@example.com</p>
+                         <a href="mailto:laurie@example.com" class="text-pop hover:text-primary transition-colors font-medium underline decoration-1 underline-offset-2">Send Email</a>
+                     </div>
+                     <div class="text-center card-hover" data-aos="fade-up" data-aos-delay="300">
+                         <div class="w-16 h-16 bg-blue-200/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                             <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                             </svg>
+                         </div>
+                         <h3 class="text-xl font-medium text-charcoal mb-3">Phone</h3>
+                         <p class="text-charcoal mb-4">(555) 123-4567</p>
+                         <a href="tel:+15551234567" class="text-pop hover:text-primary transition-colors font-medium underline decoration-1 underline-offset-2">Call Now</a>
+                     </div>
+                     <div class="text-center card-hover md:col-span-2" data-aos="fade-up" data-aos-delay="400">
+                         <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                             <svg class="w-8 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                             </svg>
+                         </div>
+                         <h3 class="text-xl font-medium text-charcoal mb-3">Location</h3>
+                         <p class="text-charcoal mb-4">South Florida</p>
+                         <p class="text-charcoal text-sm">Available for local and remote collaborations</p>
+                     </div>
+                 </div>
+                 <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="500">
+                     <h4 class="text-lg font-light text-charcoal mb-6">Follow My Work</h4>
+                     <div class="flex justify-center space-x-8">
+                         <a href="https://thefreewebsitewizards.com/" class="text-charcoal hover:text-pop transition-colors">
+                             <i data-feather="instagram" class="w-6 h-6"></i>
+                         </a>
+                        
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+     <!-- Footer -->
+     <footer class="bg-charcoal text-white py-16">
+         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="text-center">
+                 <p class="text-2xl font-light serif mb-6 text-white">Laurie Tan</p>
+                 <div class="flex justify-center space-x-8 mb-8">
+                     <a href="#" class="text-white/70 hover:text-white transition-colors">
+                         <i data-feather="instagram" class="w-5 h-5"></i>
+                     </a>
+                     <a href="#" class="text-white/70 hover:text-white transition-colors">
+                         <i data-feather="linkedin" class="w-5 h-5"></i>
+                     </a>
+                     <a href="#" class="text-white/70 hover:text-white transition-colors">
+                         <i data-feather="youtube" class="w-5 h-5"></i>
+                     </a>
+                 </div>
+                 <p class="text-sm text-blue-200">&copy; 2024 All rights reserved.</p>
+                <p class="text-xs text-blue-200/70 mt-4">Made by <a href="https://thefreewebsitewizards.com/" class="hover:text-blue-200 transition-colors">The Free Website Wizards</a></p>
+             </div>
+         </div>
+     </footer>
+
+     <!-- Scripts -->
+     <script>
+         // Initialize AOS
+         AOS.init({
+             duration: 800,
+             easing: 'ease-in-out',
+             once: true
+         });
+
+         // Initialize Feather icons
+         feather.replace();
+
+         // Mobile menu toggle
+         const mobileMenuButton = document.querySelector('[data-mobile-menu-button]');
+         const mobileMenu = document.querySelector('[data-mobile-menu]');
+
+         if (mobileMenuButton && mobileMenu) {
+             mobileMenuButton.addEventListener('click', () => {
+                 mobileMenu.classList.toggle('hidden');
+             });
+         }
+
+         // Navbar scroll effect
+         const navbar = document.querySelector('.elegant-nav');
+         let lastScrollTop = 0;
+
+         window.addEventListener('scroll', () => {
+             const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+             
+             if (scrollTop > 100) {
+                 navbar.classList.add('scrolled');
+             } else {
+                 navbar.classList.remove('scrolled');
+             }
+             
+             lastScrollTop = scrollTop;
+         });
+
+         // Smooth scrolling for navigation links
+         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+             anchor.addEventListener('click', function (e) {
+                 e.preventDefault();
+                 const target = document.querySelector(this.getAttribute('href'));
+                 if (target) {
+                     target.scrollIntoView({
+                         behavior: 'smooth',
+                         block: 'start'
+                     });
+                     // Close mobile menu if open
+                     if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                         mobileMenu.classList.add('hidden');
+                     }
+                 }
+             });
+         });
+
+         // Update active navigation link on scroll
+         const sections = document.querySelectorAll('section[id]');
+         const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+         function updateActiveLink() {
+             let current = '';
+             sections.forEach(section => {
+                 const sectionTop = section.offsetTop;
+                 const sectionHeight = section.clientHeight;
+                 if (window.pageYOffset >= sectionTop - 200) {
+                     current = section.getAttribute('id');
+                 }
+             });
+
+             navLinks.forEach(link => {
+                 link.classList.remove('text-accent');
+                 link.classList.add('text-white');
+                 if (link.getAttribute('href') === `#${current}`) {
+                     link.classList.remove('text-white');
+                     link.classList.add('text-accent');
+                 }
+             });
+         }
+
+         window.addEventListener('scroll', updateActiveLink);
+         updateActiveLink(); // Call once on load
+     </script>
+ </body>
+ </html>
